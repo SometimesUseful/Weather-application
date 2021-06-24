@@ -11,6 +11,7 @@ function showWeather(city){
         alert('Enter a city');
         return;
     }
+    document.querySelector('.w-placeholder').style.visibility = 'visible';
     let date = new Date();
     let cityData = fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=f89e161a878685dcfa708dfbc08a670e`)
         .then(response => response.json())
@@ -24,7 +25,13 @@ function showWeather(city){
 
         })
         .catch(err => alert(err.message));
-        document.querySelector('.time').innerText = new Date().getHours();
+        let month;
+        if (date.getMonth()+1<10){
+            month = `0${date.getMonth()+1}`;
+        }else {
+            month = `${date.getMonth()+1}`;
+        }
+        document.querySelector('.time').innerText = `${date.getDate()}.${month} ${date.getHours()}:${date.getMinutes()}`;
 
 
 }

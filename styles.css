@@ -41,3 +41,13 @@ body{
     width: 50px;
     height: 50px;
 }
+.error-placeholder{
+    width: 400px;
+    margin: auto;
+    visibility: hidden;
+    background-color: #b3ffff;
+}
+.err{
+    text-align: center;
+    padding: 10px;
+}

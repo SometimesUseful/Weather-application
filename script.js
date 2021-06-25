@@ -1,11 +1,5 @@
 let input = document.querySelector('.w-input');
 let showBtn = document.querySelector('.w-btn');
-let weatherPlaceholder = document.querySelector('.w-placeholder');
-let test = fetch('https://api.openweathermap.org/data/2.5/weather?q=Vinnytsia&appid=f89e161a878685dcfa708dfbc08a670e')
-    .then(response => response.json())
-    .then(data => console.log(data));
-
-
 function showWeather(city){
     if (city===false){
         alert('Enter a city');
